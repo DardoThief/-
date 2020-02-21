@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form name="f1" id="f1">
+      <select name="Number" id="s1">
+        <option value="1" >1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <select name="Number" id="s2">
+        <option value="1" >1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <select name="Number" id="s3">
+        <option value="1" >1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <select name="Number" id="s4">
+        <option value="1" >1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <select name="Number" id="s5">
+        <option value="1" >1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input id="i1">
+      <input id="i2">
+      <input type="button" id="button" onclick="ok()" value="Send">
+    </form>
+    <div id="result"></div>
+    <script>
+
+/* function format() {
+let form = document.forms["f1"];
+let fd = new FormData(form);
+var data = {};
+for (let [key, prop] of fd) {
+  data[key] = prop;
+}
+
+data = JSON.stringify(data, null, 2);
+
+console.log(data);
+} */
+
+/* function format(){
+
+$('#f1').on('button', function(){
+
+    let data = $(this).serialize();
+
+    $.ajax({
+        method: 'GET',
+        url: 'test.php',
+        data: data
+    }).done(function( msg ){
+        console.log( msg );
+    });
+
+    return false;
+});
+} */
+
+
+      function ok() {
+          var s1 = document.getElementById('s1').value;
+          var s2 = document.getElementById('s2').value;
+          var s3 = document.getElementById('s3').value;
+          var s4 = document.getElementById('s4').value;
+          var s5 = document.getElementById('s5').value;
+          var i1 = document.getElementById('i1').value;
+          var i2 = document.getElementById('i2').value;
+       
+          var html = s1 + s2 + s3 + s4 + s5 + i1 + i2;
+       
+          document.getElementById('result').innerHTML = html;
+      }
+      function click() {
+      document.getElementById('button').addEventListener('click', ok);
+      // document.getElementById('button').addEventListener('click', format);
+      }
+      </script>
+  </body>
+</html>

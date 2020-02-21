@@ -1,0 +1,7 @@
+.col-xs-12 {
+  border: 1px black solid;
+}
+
+.height .col-xs-12 {
+  height: 55px;
+}

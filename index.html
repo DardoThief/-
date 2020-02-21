@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Тест</title>
+    <meta charset="utf-8">
+    <meta name="description" content="lorem ipsum">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <h1>Здесь должна быть надпись</h1>
+      </div>
+    </div>
+    <div class="row height">
+      <div class="col-xs-12 col-lg-4 first" style="background-color: chartreuse;"></div>
+      <div class="col-xs-12 col-lg-4 second" style="background-color: cyan; border: 1px dashed;"></div>
+      <div class="col-xs-12 col-lg-4" style="background-color: darkorange;"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-lg-4">
+        <button type="button" onclick="hide()" class="btn btn-md" style="background-color: yellow;">Кнопка 1</button>
+      </div>
+      <div class="col-xs-12 col-lg-8">
+        <button type="button" class="btn btn-md this" style="background-color: greenyellow;">Кнопка 2</button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      alert("Привет, мир!");
+      
+      function hide() {
+         div = document.querySelector('div.col-lg-12')
+         div.style.display = div.style.display == "none" ? "block" : "none";
+      }
+
+      $(function(){
+        jQuery.fn.swap = function(b) {
+          b = jQuery(b)[0];
+          var a = this[0],
+              a2 = a.cloneNode(true),
+              b2 = b.cloneNode(true),
+              stack = this;
+
+          a.parentNode.replaceChild(b2, a);
+          b.parentNode.replaceChild(a2, b);
+
+          stack[0] = a2;
+          return this.pushStack( stack );
+        };
+
+        $('.this').on('click', function(){
+          $('.first').swap('.second');
+        });
+      });
+    </script>
+  </body>
+</html>
